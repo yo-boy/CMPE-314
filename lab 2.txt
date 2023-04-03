@@ -1,0 +1,111 @@
+﻿Fortran95 program
+
+#include <iostream>
+
+int main() {
+    int Int_List[99];
+    int List_Len, Counter, Sum = 0, Average, Result = 0;
+
+    std::cin >> List_Len;
+
+    if (List_Len > 0 && List_Len < 100) {
+        // Read input data into an array and compute its sum
+        for (Counter = 0; Counter < List_Len; Counter++) {
+            std::cin >> Int_List[Counter];
+            Sum += Int_List[Counter];
+        }
+
+        // Compute the average
+        Average = Sum / List_Len;
+
+        // Count the values that are greater than the average
+        for (Counter = 0; Counter < List_Len; Counter++) {
+            if (Int_List[Counter] > Average) {
+                Result++;
+            }
+        }
+
+        // Print the result
+        std::cout << "Number of values bigger than Average is: " << Result << std::endl;
+    }
+    else {
+        std::cout << "list length value is not allowed, it should be between 0 and 100" << std::endl;
+    }
+
+    return 0;
+}
+
+COBOL program
+
+#include <iostream>
+
+int main() {
+    int n;
+    std::cin >> n;
+
+    while (n != 42) {
+        std::cout << n << std::endl;
+        std::cin >> n;
+    }
+
+    return 0;
+}
+
+ADA program
+
+#include <iostream>
+
+int main() {
+    typedef int Small;
+    Small Input;
+
+    while (true) {
+        std::cin >> Input;
+	// here I emulate the constraint put on the subtype in ADA
+	if (Input < 0 or Input > 99){
+	  std::cout << "Constraint_Error";
+	  break;
+	}
+	if (Input == 42) {
+            break;
+        }
+        else {
+            std::cout << Input << std::endl;
+        }
+    }
+    return 0;
+}
+
+PASCAL program
+
+#include <iostream>
+
+int main() {
+    int x = 5;
+    int s = 0;
+    // this one just needs a simple do while loop
+    do {
+        s += x;
+        x--;
+    } while (x != 0);
+
+    std::cout << s << std::endl;
+    return 0;
+}
+
+C# program 
+
+#include <iostream>
+
+int main() {
+    int input;
+    
+    while (true) {
+      std::cin >> input;
+        if (input == 23) {
+            break;
+        }
+        std::cout << input << std::endl;
+    }
+    return 0;
+}
